@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
 
-function App() {
+import "./Header.scss";
+
+import Header from "./components/Header";
+import H1Section from "./components/H1Section";
+import InfoSection from "./components/InfoSection";
+/*
+import ToParentsSection from "./components/ToParentsSection";
+import ToSchoolSection from "./components/ToSchoolSection"; */
+
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <main>
+        <H1Section />
+        <InfoSection />
+        {/*         
+        <ToParentsSection />
+        <ToSchoolSection /> */}
+      </main>
     </div>
   );
 }
-
-export default App;

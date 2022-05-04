@@ -1,6 +1,8 @@
+import styles from "./Header.module.scss";
+
 export default function Header() {
   return (
-    <header>
+    <header className={styles.header}>
       <nav>
         <a href="#/">Attentify</a>
         <ul>
@@ -15,7 +17,6 @@ export default function Header() {
           </li>
         </ul>
       </nav>
-      <h2>test</h2>
     </header>
   );
 }

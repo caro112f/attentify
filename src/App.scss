@@ -1,10 +1,33 @@
-$background-color: #f5f5f5;
+@use "./components/variables.module.scss" as v;
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
 
 html {
-  background-color: $background-color;
+  background-color: v.$white;
 }
+
+h1,
+h2,
+h3 {
+  @include v.headingfont;
+}
+h4,
+h5,
+p {
+  @include v.pfont;
+}
+
 main {
-  display: block;
-  width: 400px;
-  height: 400px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1000px) auto;
+  place-content: center;
+
+  .main_content {
+    display: grid;
+    grid-column: 2/3;
+  }
 }

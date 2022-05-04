@@ -1,0 +1,7 @@
+@use "./variables.module.scss" as v;
+
+.header {
+  border: 2px solid black;
+  display: grid;
+  grid-column: 1/4;
+}

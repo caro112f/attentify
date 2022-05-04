@@ -12,11 +12,13 @@ export default function App() {
     <div className="App">
       <Header />
       <main>
-        <H1Section />
-        <InfoSection />
-        {/*         
+        <section className="main_content">
+          <H1Section />
+          <InfoSection />
+          {/*         
         <ToParentsSection />
         <ToSchoolSection /> */}
+        </section>
       </main>
     </div>
   );

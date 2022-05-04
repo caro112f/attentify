@@ -1,0 +1,49 @@
+$white: #f5f5f5;
+$grey: #e0e0e0;
+$blue: #95c0db;
+$green: #70af72;
+$black: black;
+
+@mixin for-phone {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+@mixin for-tablet-portrait {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+@mixin for-desktop {
+  @media (min-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin h1size($n) {
+  font-size: $n * 4.209rem;
+}
+@mixin h2size($n) {
+  font-size: $n * 3.157rem;
+}
+@mixin h3size($n) {
+  font-size: $n * 2.369rem;
+}
+@mixin h4size($n) {
+  font-size: $n * 1.777rem;
+}
+@mixin h5size($n) {
+  font-size: $n * 1.333rem;
+}
+@mixin psize($n) {
+  font-size: $n * 1rem;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;700&display=swap");
+
+@mixin headingfont {
+  font-family: "Montserrat", sans-serif;
+}
+@mixin pfont {
+  font-family: "Lato", sans-serif;
+}

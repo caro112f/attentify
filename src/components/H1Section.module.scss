@@ -1,6 +1,8 @@
+@use "./variables.module.scss" as v;
+
 .h1section {
   h1 {
-    color: red;
+    color: v.$black;
   }
   h2 {
     color: red;

@@ -1,7 +1,5 @@
 import "./App.scss";
 
-import "./Header.scss";
-
 import Header from "./components/Header";
 import H1Section from "./components/H1Section";
 import InfoSection from "./components/InfoSection";

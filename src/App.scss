@@ -1,10 +1,10 @@
-$col: red;
+$background-color: #f5f5f5;
+
 html {
-  background-color: $col;
+  background-color: $background-color;
 }
 main {
   display: block;
   width: 400px;
   height: 400px;
-  background-color: blue;
 }

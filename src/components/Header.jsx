@@ -15,6 +15,7 @@ export default function Header() {
           </li>
         </ul>
       </nav>
+      <h2>test</h2>
     </header>
   );
 }

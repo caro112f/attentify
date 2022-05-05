@@ -13,20 +13,21 @@ export default function ToSchoolSection() {
   const schoolRef = useRef();
 
   useEffect(() => {
-    const element = schoolRef.current;
-    gsap.from(element, { y: 100, opacity: 0 });
-    gsap.to(element, {
-      duration: 1,
-      y: 0,
-      opacity: 1,
-      scrollTrigger: {
-        trigger: element.querySelector("#toparents"),
-        start: "50%",
-        end: "70%",
-        scrub: false,
-        markers: true,
-      },
-    });
+    const el = schoolRef.current;
+    gsap.fromTo(
+      el,
+      { autoAlpha: 0 },
+      {
+        duration: 1,
+        autoAlpha: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: el,
+          start: "top center+=100",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
   });
   return (
     <section id="toschools" ref={schoolRef}>

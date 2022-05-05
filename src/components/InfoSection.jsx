@@ -12,20 +12,23 @@ export default function InfoSection(props) {
   const infoRef = useRef();
 
   useEffect(() => {
-    const element = infoRef.current;
-    gsap.from(element, { y: 100, opacity: 0 });
-    gsap.to(element, {
-      duration: 1,
-      y: 0,
-      opacity: 1,
-      scrollTrigger: {
-        trigger: element.querySelector("#infosection"),
-        start: "10%",
-        end: "20%",
-        scrub: false,
-        markers: true,
+    const el = infoRef.current;
+    gsap.fromTo(
+      el,
+      {
+        autoAlpha: 0,
       },
-    });
+      {
+        duration: 1,
+        autoAlpha: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: el,
+          start: "top center+=100",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
   });
   return (
     <section id="infosection" className="infosection" ref={infoRef}>

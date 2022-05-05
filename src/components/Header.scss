@@ -41,7 +41,11 @@
     display: block;
     cursor: pointer;
     position: fixed;
-    right: 3rem;
+    right: 1rem;
+    top: 1.5rem;
+    @include v.for-tablet-portrait {
+      right: 3rem;
+    }
   }
   #bar1,
   #bar2,

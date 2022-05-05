@@ -36,7 +36,11 @@ export default function ToSchoolSection() {
         <h3>Få adgang til vores research og hjerneskanner </h3>
         <article>
           <div className="facts">
-            <h4>Teknisk info</h4>
+            <h4>
+              Faktaboks <br />
+              <hr />
+            </h4>
+
             <ul>
               <li>Lorem</li>
               <li>Ipsum</li>

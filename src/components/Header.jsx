@@ -1,23 +1,26 @@
 import "./Header.scss";
 import logo from "./img/Attentify_Logo.svg";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { gsap } from "gsap";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   function ToggleBurgermenu() {
-    if (setMenuOpen === true) {
-      setMenuOpen(false);
-    } else {
-      setMenuOpen(true);
-    }
+    setMenuOpen((old) => !old);
   }
+
+  const menuRef = useRef();
+  useEffect(() => {
+    gsap.from(menuRef.current, { y: -200 });
+    gsap.to(menuRef.current, { duration: 1, y: 60 });
+  });
   return (
     <header className="header">
       <nav>
         <div id="logo_wrapper">
           <img src={logo} className="logo" alt="" />
         </div>
-        <div id="menu" className={menuOpen ? null : "inactive"}>
+        <div id="menu" ref={menuRef} className={menuOpen ? null : "inactive"}>
           <ul>
             <li>
               <a
@@ -25,7 +28,7 @@ export default function Header() {
                 className="nav-link"
                 onClick={ToggleBurgermenu}
               >
-                Læs mere
+                <h5>Læs mere</h5>
               </a>
             </li>
             <li>
@@ -34,7 +37,7 @@ export default function Header() {
                 className="nav-link"
                 onClick={ToggleBurgermenu}
               >
-                Til forældre
+                <h5>Til forældre</h5>
               </a>
             </li>
             <li>
@@ -43,7 +46,7 @@ export default function Header() {
                 className="nav-link"
                 onClick={ToggleBurgermenu}
               >
-                Til skoler
+                <h5>Til skoler</h5>
               </a>
             </li>
           </ul>

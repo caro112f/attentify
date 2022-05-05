@@ -2,6 +2,9 @@
 
 .header {
   margin: 1rem;
+  @include v.for-tablet-portrait {
+    margin: 1rem 2rem 1rem 2rem;
+  }
   display: grid;
   grid-column: 1/4;
   .logo {
@@ -24,6 +27,7 @@
 
   li {
     list-style: none;
+    transition: 0.2s ease-out;
   }
   a {
     text-decoration: none;
@@ -36,6 +40,8 @@
   #burgermenu {
     display: block;
     cursor: pointer;
+    position: fixed;
+    right: 3rem;
   }
   #bar1,
   #bar2,
@@ -60,13 +66,14 @@
   }
 
   #menu {
-    position: absolute;
+    position: fixed;
     right: 0;
     left: 0;
     background-color: v.$grey;
     padding: 10rem 3rem 3rem 3rem;
     text-align: center;
-    transition: 0.3s;
+    transition: ease-out;
+    box-shadow: 0px 3px 12px darkgrey;
     ul {
       padding: 0;
       display: flex;
@@ -76,5 +83,12 @@
         gap: 3rem;
       }
     }
+    li:hover {
+      transform: scale(1.1);
+    }
+  }
+  h5 {
+    @include v.h5size(0.8);
+    font-weight: 500;
   }
 }

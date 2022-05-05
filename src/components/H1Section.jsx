@@ -12,8 +12,8 @@ export default function H1Section() {
   });
   return (
     <section className="h1section">
-      <article>
-        <h1 ref={h1Ref}>
+      <article ref={h1Ref}>
+        <h1>
           Hjerneskanner <br />
           <span className="smalltext">
             der opfanger tegn på ADHD med <br />{" "}
@@ -26,7 +26,6 @@ export default function H1Section() {
         <img src={waves} className="waves" alt="" />
       </article>
       <div className="loadmore">
-        <p>Læs mere</p>
         <DownOutlined />
       </div>
     </section>

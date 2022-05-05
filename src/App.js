@@ -5,6 +5,7 @@ import H1Section from "./components/H1Section";
 import InfoSection from "./components/InfoSection";
 import ToParentsSection from "./components/ToParentsSection";
 import ToSchoolSection from "./components/ToSchoolSection";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <ToParentsSection />
         <ToSchoolSection />
       </main>
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,33 @@
+@use "./variables.scss" as v;
+
+#footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem 2rem 1rem;
+  gap: 3rem;
+  text-align: center;
+  @include v.for-tablet-portrait {
+    padding: 2rem 4rem 2rem 4rem;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+  }
+  ul {
+    list-style: none;
+    padding: 1rem;
+  }
+  h4 {
+    @include v.h4size(0.7);
+  }
+  @include v.for-tablet-portrait {
+    .indryk {
+      padding: 5px 0rem 0rem 5rem;
+    }
+  }
+  h5 {
+    @include v.h5size(0.8);
+  }
+}

@@ -49,6 +49,11 @@ export default function Header() {
                 <h5>Til skoler</h5>
               </a>
             </li>
+            <li>
+              <a href="#footer" className="nav-link" onClick={ToggleBurgermenu}>
+                <h5>Kontakt os</h5>
+              </a>
+            </li>
           </ul>
         </div>
         <div id="burgermenu" onClick={ToggleBurgermenu}>

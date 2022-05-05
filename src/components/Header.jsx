@@ -1,16 +1,19 @@
 import styles from "./Header.module.scss";
+import logo from "./Attentify_Logo.svg";
 
 export default function Header() {
   return (
     <header className={styles.header}>
       <nav>
-        <a href="#/">Attentify</a>
+        <div id="logo_wrapper">
+          <img src={logo} className="logo" alt="" />
+        </div>
         <ul>
           <li>
             <a href="#infosection">Læs mere</a>
           </li>
           <li>
-            <a href="#/">Til privat</a>
+            <a href="#/">Til forældre</a>
           </li>
           <li>
             <a href="#/">Til skoler</a>

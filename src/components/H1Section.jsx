@@ -1,6 +1,8 @@
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
-import styles from "./H1Section.module.scss";
+import "./H1Section.scss";
+import waves from "./waves.svg";
+import { DownOutlined } from "@ant-design/icons";
 
 export default function H1Section() {
   const h1Ref = useRef();
@@ -9,19 +11,23 @@ export default function H1Section() {
     gsap.to(h1Ref.current, { duration: 2, opacity: 1 });
   });
   return (
-    <section className={styles.h1section}>
+    <section className="h1section">
       <article>
-        <div id="waves">
-          <img src="" alt="" />
-        </div>
         <h1 ref={h1Ref}>
-          Hjerneskanner <span>der opfanger tegn på ADHD med </span>{" "}
-          <span>92%</span> <span>sikkerhed</span>
+          Hjerneskanner <br />
+          <span className="smalltext">
+            der opfanger tegn på ADHD med <br />{" "}
+          </span>
+          <span className="bignumber">
+            92% <br />
+          </span>
+          <span className="smalltext">sikkerhed</span>
         </h1>
+        <img src={waves} className="waves" alt="" />
       </article>
-      <div id="loadmore">
+      <div className="loadmore">
         <p>Læs mere</p>
-        <img src="" alt="" />
+        <DownOutlined />
       </div>
     </section>
   );

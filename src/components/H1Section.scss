@@ -1,0 +1,54 @@
+@use "./variables.module.scss" as v;
+
+.h1section {
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 4rem 1rem 4rem 1rem;
+    align-items: center;
+    @include v.for-tablet-portrait {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      padding: 8rem 2rem 8rem 2rem;
+    }
+  }
+  img {
+    grid-column: 1/2;
+    grid-row: 1;
+  }
+  .waves {
+    display: block;
+    max-width: 100%;
+    min-width: 10rem;
+  }
+  h1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    grid-column: 2/3;
+    @include v.h1size(0.5);
+    @include v.for-tablet-portrait {
+      @include v.h1size(0.8);
+      align-items: flex-end;
+    }
+  }
+  .smalltext {
+    @include v.h1size(0.2);
+    @include v.for-tablet-portrait {
+      @include v.h1size(0.3);
+    }
+  }
+  .bignumber {
+    @include v.h1size(1);
+    color: v.$green;
+    @include v.for-tablet-portrait {
+      @include v.h1size(1.5);
+      color: v.$green;
+    }
+  }
+  .loadmore {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}

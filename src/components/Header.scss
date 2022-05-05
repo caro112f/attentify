@@ -1,0 +1,74 @@
+@use "./variables.scss" as v;
+
+.header {
+  margin: 1rem;
+  display: grid;
+  grid-column: 1/4;
+  .logo {
+    width: 12rem;
+    z-index: 2;
+  }
+  #logo_wrapper {
+    z-index: 2;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  .inactive {
+    display: none;
+  }
+  #burgermenu {
+    display: block;
+    cursor: pointer;
+  }
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    --webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+  }
+
+  #burgermenu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  #burgermenu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  #burgermenu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  #menu {
+    position: absolute;
+    right: 0;
+    left: 0;
+    background-color: v.$grey;
+    padding: 8rem 3rem 3rem 3rem;
+    text-align: center;
+    transition: 0.3s;
+    ul {
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+}

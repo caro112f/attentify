@@ -1,4 +1,4 @@
-@use "./components/variables.module.scss" as v;
+@use "./components/variables.scss" as v;
 
 * {
   margin: 0;
@@ -21,16 +21,9 @@ p {
   @include v.pfont;
 }
 
-main {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1000px) auto;
-  place-content: center;
+// main {
+//   display: grid;
+//   grid-template-columns: auto minmax(0, 1000px) auto;
+//   place-content: center;
 
-  .main_content {
-    display: grid;
-    grid-column: 2/3;
-  }
-}
-.logo {
-  width: 12rem;
-}
+// }

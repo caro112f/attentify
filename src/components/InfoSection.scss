@@ -1,0 +1,54 @@
+@use "./variables.scss" as v;
+.infosection {
+  display: grid;
+  background-color: v.$grey;
+  grid-template-columns: auto minmax(0, 1200px) auto;
+  place-content: center;
+  .content_wrapper {
+    grid-column: 2/3;
+    display: grid;
+    margin: 1rem;
+  }
+  h2 {
+    grid-row: 1;
+    @include v.h2size(0.5);
+    padding: 2rem 0rem 2rem 0rem;
+    @include v.for-tablet-portrait {
+      @include v.h2size(0.7);
+      padding: 4rem 0rem 4rem 0rem;
+    }
+  }
+  article {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    @include v.for-tablet-portrait {
+      display: grid;
+      place-content: center;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  .graphics_facts {
+    grid-column: 1/3;
+    grid-row: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .smallcircle {
+    max-width: 100%;
+  }
+
+  .bigcircle {
+    max-width: 100%;
+  }
+}

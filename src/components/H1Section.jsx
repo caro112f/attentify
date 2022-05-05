@@ -1,7 +1,7 @@
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 import "./H1Section.scss";
-import waves from "./waves.svg";
+import waves from "./img/waves.svg";
 import { DownOutlined } from "@ant-design/icons";
 
 export default function H1Section() {

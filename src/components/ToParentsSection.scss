@@ -15,6 +15,12 @@
       padding: 4rem 0rem 1rem 0rem;
     }
   }
+  h3 {
+    @include v.h3size(0.4);
+    @include v.for-tablet-portrait {
+      @include v.h3size(0.5);
+    }
+  }
   article {
     display: flex;
     flex-direction: column;

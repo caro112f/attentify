@@ -1,6 +1,6 @@
 import "./InfoSection.scss";
-import circlegreen from "./img/circle-green.svg";
-import circleblue from "./img/circle-blue.svg";
+// import circlegreen from "./img/circle-green.svg";
+// import circleblue from "./img/circle-blue.svg";
 import img from "./img/client-reception.webp";
 
 import { useRef, useEffect } from "react";

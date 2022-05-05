@@ -4,9 +4,32 @@ import girlreading from "./img/girl-reading.webp";
 import boycomputer from "./img/boy-computer.webp";
 import girlheadphones from "./img/girl-headphones.webp";
 
+import { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 export default function ToParentsSection() {
+  gsap.registerPlugin(ScrollTrigger);
+  const parentRef = useRef();
+
+  useEffect(() => {
+    const element = parentRef.current;
+    gsap.from(element, { y: 100, opacity: 0 });
+    gsap.to(element, {
+      duration: 1,
+      y: 0,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: element.querySelector("#toparents"),
+        start: "30%",
+        end: "50%",
+        scrub: false,
+        markers: true,
+      },
+    });
+  });
   return (
-    <section id="toparents">
+    <section id="toparents" ref={parentRef}>
       <div className="content_wrapper">
         <h2>Er du i tvivl om dit barn har ADHD?</h2>
         <h3>Køb vores skanner til privat brug</h3>

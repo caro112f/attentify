@@ -3,9 +3,32 @@ import circlegreen from "./img/circle-green.svg";
 import circleblue from "./img/circle-blue.svg";
 import img from "./img/client-reception.webp";
 
+import { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 export default function InfoSection(props) {
+  gsap.registerPlugin(ScrollTrigger);
+  const infoRef = useRef();
+
+  useEffect(() => {
+    const element = infoRef.current;
+    gsap.from(element, { y: 100, opacity: 0 });
+    gsap.to(element, {
+      duration: 1,
+      y: 0,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: element.querySelector("#infosection"),
+        start: "10%",
+        end: "20%",
+        scrub: false,
+        markers: true,
+      },
+    });
+  });
   return (
-    <section id="infosection" className="infosection">
+    <section id="infosection" className="infosection" ref={infoRef}>
       <div className="content_wrapper">
         <h2>Hvordan fungerer det?</h2>
         <article>
@@ -33,7 +56,7 @@ export default function InfoSection(props) {
             </p>
           </div>
           <img src={img} alt="" />
-          <section className="graphics_facts">
+          {/* <section className="graphics_facts">
             <div className="smallgraphic">
               <img className="smallcircle" src={circlegreen} alt="" />
             </div>
@@ -43,7 +66,7 @@ export default function InfoSection(props) {
             <div className="biggraphic">
               <img className="smallcircle" src={circlegreen} alt="" />
             </div>
-          </section>
+          </section> */}
         </article>
       </div>
     </section>

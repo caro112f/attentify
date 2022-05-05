@@ -4,9 +4,32 @@ import sharingheart from "./img/sharing-heart.webp";
 import girlnature from "./img/girl-nature.webp";
 import analyze from "./img/analyze-papers.webp";
 
+import { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 export default function ToSchoolSection() {
+  gsap.registerPlugin(ScrollTrigger);
+  const schoolRef = useRef();
+
+  useEffect(() => {
+    const element = schoolRef.current;
+    gsap.from(element, { y: 100, opacity: 0 });
+    gsap.to(element, {
+      duration: 1,
+      y: 0,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: element.querySelector("#toparents"),
+        start: "50%",
+        end: "70%",
+        scrub: false,
+        markers: true,
+      },
+    });
+  });
   return (
-    <section id="toschools">
+    <section id="toschools" ref={schoolRef}>
       <div className="content_wrapper">
         <h2>Skal dine elever blive klogere på ADHD?</h2>
         <h3>Få adgang til vores research og hjerneskanner </h3>

@@ -6,10 +6,9 @@
   grid-column: 1/4;
   .logo {
     width: 12rem;
-    z-index: 2;
   }
   #logo_wrapper {
-    z-index: 2;
+    z-index: 1;
   }
   nav {
     display: flex;
@@ -30,6 +29,7 @@
     text-decoration: none;
     color: black;
   }
+
   .inactive {
     display: none;
   }
@@ -37,7 +37,9 @@
     display: block;
     cursor: pointer;
   }
-  .bar {
+  #bar1,
+  #bar2,
+  #bar3 {
     display: block;
     width: 25px;
     height: 3px;
@@ -47,21 +49,22 @@
     background-color: #101010;
   }
 
-  #burgermenu.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-  #burgermenu.active .bar:nth-child(1) {
+  .active1 {
     transform: translateY(8px) rotate(45deg);
   }
-  #burgermenu.active .bar:nth-child(3) {
+  .active2 {
+    opacity: 0;
+  }
+  .active3 {
     transform: translateY(-8px) rotate(-45deg);
   }
+
   #menu {
     position: absolute;
     right: 0;
     left: 0;
     background-color: v.$grey;
-    padding: 8rem 3rem 3rem 3rem;
+    padding: 10rem 3rem 3rem 3rem;
     text-align: center;
     transition: 0.3s;
     ul {
@@ -69,6 +72,9 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      @include v.for-tablet-portrait {
+        gap: 3rem;
+      }
     }
   }
 }

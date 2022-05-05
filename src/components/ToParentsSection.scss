@@ -1,0 +1,7 @@
+@use "./variables.scss" as v;
+
+.toparents {
+  .facts {
+    background-color: v.$green;
+  }
+}

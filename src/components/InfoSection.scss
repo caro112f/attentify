@@ -26,6 +26,7 @@
     @include v.for-tablet-portrait {
       display: grid;
       place-content: center;
+      align-items: center;
       grid-template-columns: 1fr 1fr;
       gap: 3rem;
     }
